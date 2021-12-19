@@ -73,6 +73,11 @@ func TestNegativeErr(t *testing.T) {
 	}
 }
 
+// func name for 'Benchmark' must start with Benchmark***
+// Run benchmark without test: go test -v -bench . -run TTT
+// CPU Profile:  go test -v -bench . -run TTT -cpuprofile cpu.out
+// Read the profile:  go tool pprof cpu.out
+// Then list sqrt
 func BenchmarkSqrt(b *testing.B) {
 	for n := 0; n < b.N; n++ {
 		val, err := sqrt(float64(n))
